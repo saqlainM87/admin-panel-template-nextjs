@@ -31,3 +31,5 @@ logs
 
 # cache
 .eslintcache
+
+.next
