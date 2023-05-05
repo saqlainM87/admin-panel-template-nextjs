@@ -1,4 +1,4 @@
-import { ResponsePaginationDef } from "@app/types/pagination.types";
+import { ResponsePaginationDef } from "@src/types/pagination.types";
 
 /* eslint-disable camelcase */
 export type UserDef = {

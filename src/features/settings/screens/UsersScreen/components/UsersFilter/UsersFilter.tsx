@@ -4,12 +4,12 @@ import { Select, Checkbox, DatePicker } from "antd";
 import moment from "moment";
 import { useTranslation } from "react-i18next";
 
-import DebouncedInput from "@app/components/atoms/DebouncedInput/DebouncedInput";
+import DebouncedInput from "@components/atoms/DebouncedInput/DebouncedInput";
 import PageFilter, {
   FilterItem,
   FilterItemCheckbox,
-} from "@app/components/molecules/PageFilter/PageFilter";
-import { useAppSelector } from "@app/redux/store";
+} from "@components/molecules/PageFilter/PageFilter";
+import { useAppSelector } from "@redux/store";
 
 const { Option } = Select;
 const { RangePicker } = DatePicker;

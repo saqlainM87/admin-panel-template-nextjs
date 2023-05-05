@@ -4,11 +4,11 @@ import { Col, Input } from "antd";
 import _toNumber from "lodash/toNumber";
 import { useTranslation } from "react-i18next/";
 
-import { Item, useForm } from "@app/components/atoms/Form/Form";
-import FormModal from "@app/components/atoms/FormModal/FormModal";
-import { ItemModalEnum } from "@app/constants/route.constants";
-import { isValidUserId, UserDef } from "@app/features/settings/settings";
-import useShowModal from "@app/hooks/useShowModal";
+import { ItemModalEnum } from "@constants/route.constants";
+import { isValidUserId, UserDef } from "@features/settings/settings";
+import useShowModal from "@hooks/useShowModal";
+import { Item, useForm } from "@src/components/atoms/Form/Form";
+import FormModal from "@src/components/atoms/FormModal/FormModal";
 
 export const ENTRY_TYPE_USER_ROLE = "user-role";
 

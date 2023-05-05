@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { LoginRequestDef, AUTH_FEATURE_KEY } from "@app/features/auth/auth";
+import { LoginRequestDef, AUTH_FEATURE_KEY } from "@features/auth/auth";
 
 import { authGetMe, authLogin } from "../api/auth.api";
 import {

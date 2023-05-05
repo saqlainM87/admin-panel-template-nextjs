@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import ContentLayout from "@app/components/layouts/ContentLayout/ContentLayout";
+import ContentLayout from "@src/components/layouts/ContentLayout/ContentLayout";
 
 const ProjectsScreen = () => {
   const { t } = useTranslation();

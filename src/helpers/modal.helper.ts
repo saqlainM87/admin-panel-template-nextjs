@@ -1,5 +1,5 @@
-import { ItemModalEnum } from "@app/constants/route.constants";
-import { SearchParamDef } from "@app/hooks/useSearchParams";
+import { ItemModalEnum } from "@constants/route.constants";
+import { SearchParamDef } from "@hooks/useSearchParams";
 
 interface ModalAddDef {
   entryType?: string;

@@ -3,13 +3,13 @@ import { useMemo } from "react";
 import { Table } from "antd";
 import { useTranslation } from "react-i18next";
 
-import Button from "@app/components/atoms/Button/Button";
+import Button from "@components/atoms/Button/Button";
 import TableView, {
   ActionMenuDef,
   TableViewProps,
-} from "@app/components/molecules/TableView/TableView";
-import useSearchParams from "@app/hooks/useSearchParams";
-import { useAppSelector } from "@app/redux/store";
+} from "@components/molecules/TableView/TableView";
+import useSearchParams from "@hooks/useSearchParams";
+import { useAppSelector } from "@redux/store";
 
 import { UserDef } from "../../../../types/user.types";
 

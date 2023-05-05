@@ -1,11 +1,13 @@
+"use client";
+
 import { memo } from "react";
 
 import { Button as AntdButton } from "antd";
 import { ButtonProps as AntdButtonProps } from "antd/es/button";
 import classnames from "classnames/bind";
-import { Link, LinkProps } from "react-router-dom";
+import Link, { LinkProps } from "next/link";
 
-import { isURL } from "@app/helpers/util.helper";
+import { isURL } from "@src/helpers/util.helper";
 
 import styles from "./Button.module.scss";
 
@@ -15,7 +17,7 @@ interface ButtonProps extends Omit<AntdButtonProps, "href"> {
   /**
    * Turn button into link, accepts internal and external links (optional)
    */
-  to?: LinkProps["to"];
+  to?: LinkProps["href"];
   /**
    * Remove horizontal padding (optional)
    */
@@ -41,7 +43,7 @@ const Button = memo(({ to, className, noPadding, ...rest }: ButtonProps) => {
 
   // Only wrap in react router link, if internal link
   if (!isExternalLink && to) {
-    return <Link to={to}>{buttonContent}</Link>;
+    return <Link href={to}>{buttonContent}</Link>;
   }
 
   return buttonContent;

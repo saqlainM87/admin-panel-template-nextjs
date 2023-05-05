@@ -2,11 +2,11 @@ import { useCallback, useEffect } from "react";
 
 import { useTranslation } from "react-i18next";
 
-import Button from "@app/components/atoms/Button/Button";
-import ContentLayout from "@app/components/layouts/ContentLayout/ContentLayout";
-import * as modalAction from "@app/helpers/modal.helper";
-import useSearchParams from "@app/hooks/useSearchParams";
-import { useAppDispatch } from "@app/redux/store";
+import Button from "@src/components/atoms/Button/Button";
+import ContentLayout from "@src/components/layouts/ContentLayout/ContentLayout";
+import * as modalAction from "@src/helpers/modal.helper";
+import useSearchParams from "@src/hooks/useSearchParams";
+import { useAppDispatch } from "@src/redux/store";
 
 import { getUsers } from "../../redux/users.slice";
 import { UserDef } from "../../types/user.types";

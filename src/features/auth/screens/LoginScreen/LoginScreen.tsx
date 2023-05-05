@@ -2,10 +2,10 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Card, Col, Input, message, Row } from "antd";
 import { useTranslation } from "react-i18next";
 
-import Button from "@app/components/atoms/Button/Button";
-import Form, { Item, useForm } from "@app/components/atoms/Form/Form";
-import { LoginRequestDef } from "@app/features/auth/auth";
-import { useAppDispatch, useAppSelector } from "@app/redux/store";
+import Button from "@components/atoms/Button/Button";
+import Form, { Item, useForm } from "@components/atoms/Form/Form";
+import { LoginRequestDef } from "@features/auth/auth";
+import { useAppDispatch, useAppSelector } from "@redux/store";
 
 import useRedirectAfterLogin from "../../hooks/useRedirectAfterLogin";
 import { login } from "../../redux/auth.slice";

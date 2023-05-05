@@ -1,8 +1,8 @@
 import axios, { AxiosRequestConfig } from "axios";
 import moment from "moment";
 
-import { ENV } from "@app/constants/env";
-import { AuthEndpointsEnum, getTokens } from "@app/features/auth/auth";
+import { ENV } from "@constants/env";
+import { AuthEndpointsEnum, getTokens } from "@features/auth/auth";
 
 /**
  * All the endpoint that do not require an access token

@@ -18,10 +18,10 @@ import {
 import cx from "classnames";
 import { useTranslation } from "react-i18next";
 
-import Button from "@app/components/atoms/Button/Button";
-import { getOrderBy } from "@app/helpers/table.helper";
-import { scrollToTop } from "@app/helpers/util.helper";
-import useSearchParams from "@app/hooks/useSearchParams";
+import Button from "@components/atoms/Button/Button";
+import { getOrderBy } from "@helpers/table.helper";
+import { scrollToTop } from "@helpers/util.helper";
+import useSearchParams from "@hooks/useSearchParams";
 
 import styles from "./TableView.module.scss";
 

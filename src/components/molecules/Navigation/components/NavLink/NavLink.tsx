@@ -1,19 +1,17 @@
 import { memo } from "react";
 
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-
-import { RouteItemDef } from "@app/types/route.types";
 
 interface NavLinkProps {
-  navItem: RouteItemDef;
+  navItem: any;
 }
 
 const NavLink = memo(({ navItem }: NavLinkProps) => {
   const { t } = useTranslation();
 
   return (
-    <Link to={Array.isArray(navItem.path) ? navItem.path[0] : navItem.path}>
+    <Link href={Array.isArray(navItem.path) ? navItem.path[0] : navItem.path}>
       {navItem.navigationTitle
         ? t(navItem.navigationTitle)
         : `Missing navigationTitle for "${navItem.id}"`}

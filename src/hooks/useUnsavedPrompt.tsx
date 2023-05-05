@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { FormInstance } from "antd/lib/form/Form";
+import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
+import { useLocation } from "react-use";
 
-import { modalConfirm } from "@app/components/atoms/ModalConfirm/ModalConfirm";
+import { modalConfirm } from "@src/components/atoms/ModalConfirm/ModalConfirm";
 
 interface UnsavedPromptProps {
   form?: FormInstance;
@@ -23,7 +24,8 @@ const useUnsavedPrompt = ({
   visible,
 }: UnsavedPromptProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const history = useHistory();
+  const router = useRouter();
+  const location = useLocation();
   const { t } = useTranslation();
 
   /**
@@ -62,8 +64,8 @@ const useUnsavedPrompt = ({
    * and shows a modal confirmation to discard form changes if form is touched.
    */
   useEffect(() => {
-    if (visible) {
-      const unblock = history.block(tx => {
+    router.beforePopState(({ url }) => {
+      if (visible) {
         if (form?.isFieldsTouched() && !isSubmitting) {
           modalConfirm(t, {
             title: title ?? t("default.unsavedChangesTitle"),
@@ -71,21 +73,18 @@ const useUnsavedPrompt = ({
             cancelText: t("default.unsavedChangesCancelTitle"),
             okText: t("default.unsavedChangesConfirmTitle"),
             onOk: () => {
-              unblock();
-              history.push(tx.pathname);
+              router.push(url);
+              return true;
             },
           });
 
           return false;
         }
-        return unblock();
-      });
-      return () => {
-        unblock();
-      };
-    }
-    return undefined; // return if not visible
-  }, [visible, form, history, history.location, isSubmitting, t, text, title]);
+      }
+
+      return true;
+    });
+  }, [visible, form, router, location, isSubmitting, t, text, title]);
 
   return { setIsSubmitting };
 };

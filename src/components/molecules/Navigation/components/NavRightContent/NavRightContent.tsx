@@ -4,9 +4,9 @@ import { LogoutOutlined } from "@ant-design/icons";
 import { Menu, Avatar } from "antd";
 import { useTranslation } from "react-i18next";
 
-import { clearUser } from "@app/features/auth/auth";
-import { getInitials } from "@app/helpers/util.helper";
-import { useAppDispatch, useAppSelector } from "@app/redux/store";
+import { clearUser } from "@features/auth/auth";
+import { getInitials } from "@helpers/util.helper";
+import { useAppDispatch, useAppSelector } from "@redux/store";
 
 const NavRightContent = memo(() => {
   const dispatch = useAppDispatch();

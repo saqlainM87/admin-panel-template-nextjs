@@ -1,7 +1,7 @@
 import { QuestionCircleOutlined } from "@ant-design/icons";
 import { Button, Result } from "antd";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 const NotFound = () => {
   const { t } = useTranslation();
@@ -11,7 +11,7 @@ const NotFound = () => {
       title={t("default.notFoundTitle")}
       subTitle={t("default.notFoundText")}
       extra={
-        <Link to="/">
+        <Link href="/">
           <Button type="primary">{t("default.notFoundBackHomeButton")}</Button>
         </Link>
       }

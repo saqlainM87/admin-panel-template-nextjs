@@ -1,14 +1,14 @@
 import { combineReducers } from "@reduxjs/toolkit";
 
-import { authReducer, AUTH_FEATURE_KEY } from "@app/features/auth/auth";
+import { authReducer, AUTH_FEATURE_KEY } from "@src/features/auth/auth";
 import {
   permissionsReducer,
   PERMISSIONS_FEATURE_KEY,
-} from "@app/features/permissions/permissions";
+} from "@src/features/permissions/permissions";
 import {
   usersReducer,
   USERS_FEATURE_KEY,
-} from "@app/features/settings/settings";
+} from "@src/features/settings/settings";
 
 const rootReducer = combineReducers({
   [USERS_FEATURE_KEY]: usersReducer,

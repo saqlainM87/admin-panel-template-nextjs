@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
-import ContentLayout from "@app/components/layouts/ContentLayout/ContentLayout";
-import { getCurrentLanguage } from "@app/features/localization/localization";
+import ContentLayout from "@components/layouts/ContentLayout/ContentLayout";
+import { getCurrentLanguage } from "@features/localization/localization";
 
 const HomeScreen = () => {
   const { t } = useTranslation();

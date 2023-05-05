@@ -6,10 +6,10 @@ import {
   PayloadAction,
 } from "@reduxjs/toolkit";
 
-import { mapPagination } from "@app/helpers/table.helper";
-import { createApiAsyncThunk } from "@app/redux/api.thunk";
-import { ErrorStateDef, LoadingStateDef } from "@app/types/api.types";
-import { TablePaginationDef } from "@app/types/pagination.types";
+import { mapPagination } from "@helpers/table.helper";
+import { createApiAsyncThunk } from "@redux/api.thunk";
+import { ErrorStateDef, LoadingStateDef } from "@src/types/api.types";
+import { TablePaginationDef } from "@src/types/pagination.types";
 
 import * as userApi from "../api/users.api";
 import {

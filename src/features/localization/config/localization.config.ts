@@ -2,7 +2,7 @@ import { NstackInstance } from "@nstack-io/javascript-sdk";
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import { ENV } from "@app/constants/env";
+import { ENV } from "@constants/env";
 
 import { DEFAULT_NS, INITIAL_LANG } from "../constants/localization.constants";
 import { NSTACK_ENV } from "../constants/localization.env";

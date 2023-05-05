@@ -2,11 +2,7 @@
   "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -32,7 +28,28 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@redux/*": ["src/redux/*"],
+      "@redux": ["src/redux"],
+      "@styles/*": ["styles/*"],
+      "@styles": ["styles"],
+      "@features/*": ["src/features/*"],
+      "@features": ["src/features"],
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components"],
+      "@constants/*": ["src/constants/*"],
+      "@constants": ["src/constants"],
+      "@helpers/*": ["src/helpers/*"],
+      "@helpers": ["src/helpers"],
+      "@api/*": ["src/api/*"],
+      "@api": ["src/api"],
+      "@layouts/*": ["src/layouts/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@analytics/*": ["src/analytics/*"],
+      "@src/*": ["src/*"]
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -42,7 +59,5 @@
     "**/*.js",
     ".next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

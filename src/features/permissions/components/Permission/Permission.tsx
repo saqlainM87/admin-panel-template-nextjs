@@ -1,6 +1,6 @@
 import { memo, ReactNode } from "react";
 
-import { Redirect } from "react-router-dom";
+import { useRouter } from "next/router";
 
 import { PermissionEnum } from "../../constants/permissions.scopes";
 import usePermissions from "../../hooks/permissions.hooks";
@@ -48,6 +48,8 @@ const Permission = ({
   redirectTo,
   requiredPermissions,
 }: PermissionProps) => {
+  const router = useRouter();
+
   const { hasPermissions } = usePermissions();
   const allowed = hasPermissions(requiredPermissions, hasAll);
 
@@ -56,7 +58,7 @@ const Permission = ({
    * to wrap the whole thing in a fragment.
    */
   if (allowed) return <>{children}</>;
-  if (redirectTo) return <Redirect to={redirectTo} />;
+  if (redirectTo) router.push(redirectTo);
   if (fallback) return <>{fallback}</>;
   return null;
 };

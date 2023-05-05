@@ -3,8 +3,8 @@ import { SortOrder } from "antd/lib/table/interface";
 import {
   TablePaginationDef,
   ResponsePaginationDef,
-} from "@app/types/pagination.types";
-import { OrderByDef } from "@app/types/table.types";
+} from "@src/types/pagination.types";
+import { OrderByDef } from "@src/types/table.types";
 
 /** The divider used in the url for the orderBy search param */
 const ORDER_BY_DIVIDER = "_";

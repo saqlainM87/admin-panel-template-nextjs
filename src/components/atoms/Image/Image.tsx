@@ -1,6 +1,6 @@
 import { memo, useState, useEffect, FC } from "react";
 
-import notFoundImage from "@app/assets/images/no-image.png";
+import notFoundImage from "@assets/images/no-image.png";
 
 import SpinWrapper from "../SpinWrapper/SpinWrapper";
 

@@ -2,11 +2,10 @@ import { DownOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 import { MenuProps } from "antd/lib/menu";
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-use";
 
-import { usePermissions } from "@app/features/permissions/permissions";
-import { PRIVATE_LIST } from "@app/routes/routes.config";
-import { RouteGroupDef, RouteItemDef } from "@app/types/route.types";
+import { usePermissions } from "@features/permissions/permissions";
+import { PRIVATE_LIST } from "@src/routes/routes.config";
 
 import NavLink from "../NavLink/NavLink";
 import styles from "./NavMenu.module.scss";
@@ -22,21 +21,24 @@ const NavMenu = ({ isSidebar, mode }: NavMenuProps) => {
 
   const { hasPermissions } = usePermissions();
 
-  const checkPermissions = (item: RouteItemDef | RouteGroupDef) =>
+  const checkPermissions = (item: any | any) =>
     "permissions" in item ? hasPermissions(item.permissions) : true;
 
-  const navLinks: RouteItemDef[] = PRIVATE_LIST.filter(
+  const navLinks: any[] = PRIVATE_LIST.filter(
     route => !route.hideInNavigation && checkPermissions(route)
   );
 
   const rootPathname = isSidebar
-    ? [...location.pathname.split(/(?=\/)/g, 1)]
+    ? [...String(location.pathname).split(/(?=\/)/g, 1)]
     : undefined;
 
   const highlightMenu = [
-    ...location.pathname.split(/(?=\/)/g, 1), // Highlight root url
-    location.pathname.substr(0, location.pathname.lastIndexOf("/")), // Highlight parent url
-    location.pathname, // Highlight entire url
+    ...String(location.pathname).split(/(?=\/)/g, 1), // Highlight root url
+    String(location.pathname).substr(
+      0,
+      String(location.pathname).lastIndexOf("/")
+    ), // Highlight parent url
+    String(location.pathname), // Highlight entire url
   ];
 
   /**
@@ -69,7 +71,7 @@ const NavMenu = ({ isSidebar, mode }: NavMenuProps) => {
           >
             {navItem.nestedRoutes
               ?.filter(checkPermissions)
-              .map((subItem: RouteItemDef | RouteGroupDef) =>
+              .map((subItem: any | any) =>
                 "groupTitle" in subItem ? (
                   <Menu.ItemGroup
                     key={subItem.id}

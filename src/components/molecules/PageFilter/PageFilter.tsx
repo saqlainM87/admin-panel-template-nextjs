@@ -5,7 +5,7 @@ import { Form, FormProps, Row, Col, Button } from "antd";
 import _mapValues from "lodash/mapValues";
 import { useTranslation } from "react-i18next";
 
-import useSearchParams from "@app/hooks/useSearchParams";
+import useSearchParams from "@hooks/useSearchParams";
 
 import FilterItem, {
   FilterItemCheckbox,

@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 
-import { api } from "@app/api/api";
+import { api } from "@api/api";
 
 import {
   GetUsersResponseDef,

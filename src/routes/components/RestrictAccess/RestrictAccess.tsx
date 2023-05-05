@@ -1,6 +1,6 @@
 import { Button, Result } from "antd";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 const RestrictAccess = () => {
   const { t } = useTranslation();
@@ -10,7 +10,7 @@ const RestrictAccess = () => {
       title={t("default.restrictAccessTitle")}
       subTitle={t("default.restrictAccessText")}
       extra={
-        <Link to="/">
+        <Link href="/">
           <Button type="primary">{t("default.notFoundBackHomeButton")}</Button>
         </Link>
       }

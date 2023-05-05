@@ -1,21 +1,21 @@
+import { useRouter } from "next/router";
 import qs from "query-string";
-import { Redirect, useLocation } from "react-router-dom";
+import { useLocation } from "react-use";
 
-import { AuthPathsEnum } from "@app/features/auth/auth";
+import { AuthPathsEnum } from "@features/auth/auth";
 
 const LoginRedirect = () => {
   const location = useLocation();
+  const router = useRouter();
 
-  return (
-    <Redirect
-      to={{
-        pathname: AuthPathsEnum.LOGIN,
-        search: qs.stringify({
-          redirect: location.pathname + location.search,
-        }),
-      }}
-    />
-  );
+  router.push({
+    pathname: AuthPathsEnum.LOGIN,
+    search: qs.stringify({
+      redirect: String(location.pathname) + String(location.search),
+    }),
+  });
+
+  return null;
 };
 
 export default LoginRedirect;

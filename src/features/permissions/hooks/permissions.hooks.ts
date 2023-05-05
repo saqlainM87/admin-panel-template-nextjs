@@ -1,4 +1,4 @@
-import { useAppSelector } from "@app/redux/store";
+import { useAppSelector } from "@redux/store";
 
 import { PermissionEnum } from "../constants/permissions.scopes";
 

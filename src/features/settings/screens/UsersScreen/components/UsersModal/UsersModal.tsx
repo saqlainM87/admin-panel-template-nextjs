@@ -4,16 +4,16 @@ import { Col, Input } from "antd";
 import _toNumber from "lodash/toNumber";
 import { useTranslation } from "react-i18next/";
 
-import { Item, useForm } from "@app/components/atoms/Form/Form";
-import FormModal from "@app/components/atoms/FormModal/FormModal";
-import { ItemModalEnum } from "@app/constants/route.constants";
+import { Item, useForm } from "@components/atoms/Form/Form";
+import FormModal from "@components/atoms/FormModal/FormModal";
+import { ItemModalEnum } from "@constants/route.constants";
 import {
   clearUser,
   getUserById,
   isValidUserId,
-} from "@app/features/settings/settings";
-import useShowModal from "@app/hooks/useShowModal";
-import { useAppDispatch, useAppSelector } from "@app/redux/store";
+} from "@features/settings/settings";
+import useShowModal from "@hooks/useShowModal";
+import { useAppDispatch, useAppSelector } from "@redux/store";
 
 import { UserDef } from "../../../../types/user.types";
 

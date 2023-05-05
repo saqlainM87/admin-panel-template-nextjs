@@ -2,12 +2,13 @@
 import { useCallback, useEffect, useState } from "react";
 
 import _toInteger from "lodash/toInteger";
+import { useRouter } from "next/router";
 import qs, { ParseOptions, StringifyOptions } from "query-string";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation } from "react-use";
 
-import { ItemModalEnum } from "@app/constants/route.constants";
-import { getOrderByExtraction } from "@app/helpers/table.helper";
-import { OrderByDef } from "@app/types/table.types";
+import { ItemModalEnum } from "@src/constants/route.constants";
+import { getOrderByExtraction } from "@src/helpers/table.helper";
+import { OrderByDef } from "@src/types/table.types";
 
 const ARRAY_FORMAT: StringifyOptions["arrayFormat"] = "bracket";
 const QUERY_OPTIONS: StringifyOptions = {
@@ -39,11 +40,11 @@ export type SearchParamDef<T = {}> = Partial<T> & {
 
 const useSearchParams = <T = {}>() => {
   const location = useLocation();
-  const history = useHistory();
+  const router = useRouter();
 
   const getCurrentSearch = useCallback(() => {
     const currentSearch = qs.parse(
-      location.search,
+      String(location.search),
       PARSE_OPTIONS
     ) as SearchParamDef as SearchParamDef<T>;
     currentSearch.orderByExtracted = getOrderByExtraction(
@@ -79,12 +80,12 @@ const useSearchParams = <T = {}>() => {
    */
   const setSearchParams = useCallback(
     (filters: SearchParamDef<T>) => {
-      history.push({
+      router.push({
         pathname: location.pathname,
         search: qs.stringify(filters, QUERY_OPTIONS),
       });
     },
-    [history, location.pathname]
+    [router, location.pathname]
   );
 
   /**
@@ -93,9 +94,9 @@ const useSearchParams = <T = {}>() => {
   const updateSearchParams = useCallback(
     (filters: SearchParamDef<T>) => {
       // Keep current search params
-      const currentSearch = qs.parse(location.search, PARSE_OPTIONS);
+      const currentSearch = qs.parse(String(location.search), PARSE_OPTIONS);
 
-      history.push({
+      router.push({
         pathname: location.pathname,
         search: qs.stringify(
           {
@@ -106,7 +107,7 @@ const useSearchParams = <T = {}>() => {
         ),
       });
     },
-    [history, location.pathname, location.search]
+    [router, location.pathname, location.search]
   );
 
   return {

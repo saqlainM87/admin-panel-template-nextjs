@@ -2,7 +2,7 @@ import { memo, ReactNode } from "react";
 
 import { Layout } from "antd";
 
-import Navigation from "@app/components/molecules/Navigation/Navigation";
+import Navigation from "@components/molecules/Navigation/Navigation";
 
 import styles from "./SidebarLayout.module.scss";
 

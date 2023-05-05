@@ -4,8 +4,8 @@ import { Modal, Row, Col, Divider, ModalProps } from "antd";
 import cx from "classnames";
 import { useTranslation } from "react-i18next";
 
-import Form, { FormProps } from "@app/components/atoms/Form/Form";
-import useUnsavedPrompt from "@app/hooks/useUnsavedPrompt";
+import useUnsavedPrompt from "@hooks/useUnsavedPrompt";
+import Form, { FormProps } from "@src/components/atoms/Form/Form";
 
 import Button from "../Button/Button";
 import SpinWrapper from "../SpinWrapper/SpinWrapper";

@@ -3,7 +3,7 @@ import { memo, ReactNode } from "react";
 import { Layout, PageHeader, PageHeaderProps } from "antd";
 import { Route } from "antd/lib/breadcrumb/Breadcrumb";
 import cx from "classnames";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import styles from "./ContentLayout.module.scss";
 
@@ -28,7 +28,7 @@ const ContentLayout = memo(
       return last ? (
         <span>{route.breadcrumbName}</span>
       ) : (
-        <Link to={route.path}>{route.breadcrumbName}</Link>
+        <Link href={route.path}>{route.breadcrumbName}</Link>
       );
     };
 
